@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combustível gasto e valor</title>
+</head>
+<body>
+    <p>Desenvolva uma página que leia a quilometragem percorrida por um determinado veículo e o valor do combustível. Calcule o gasto dele, sabendo que o veículo percorre 8km/litro.</p>
+    <br>
+    <h1>Combustível gasto e valor</h1>
+    <label for="quilometragem">Quilometragem percorrida (em km):</label>
+    <input type="number" id="quilometragem" name="quilometragem"><br>
+    
+    <label for="valorCombustivel">Valor do combustível (por litro):</label>
+    <input type="number" id="valorCombustivel" name="valorCombustivel"><br>
+    
+    <button onclick="calcularGasto()">Calcular Gasto</button>
+    
+    <p id="resultado"></p>
+    
+
+    
+        <script type="text/javascript">
+        function calcularGasto() {
+            var quilometragem = parseFloat(document.getElementById("quilometragem").value);
+            var valorCombustivel = parseFloat(document.getElementById("valorCombustivel").value);
+            var consumo = 8; // km/litro
+            
+            var gasto = (quilometragem / consumo) * valorCombustivel;
+            
+            document.getElementById("resultado").innerHTML = "O gasto estimado é de R$ " + gasto.toFixed(2);
+        }
+    
+    </script>
+    
+</body>
+</html>

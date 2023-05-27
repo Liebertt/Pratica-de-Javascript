@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valor de Produtos</title>
+</head>
+<body>
+    <p>Desenvolva uma página leia o nome, o valor e a quantidade vendida de três produtos. Calcule o valor total da venda.</p>
+    <br>
+    <h1>Valor da soma dos três produtos</h1>
+    <div>
+        <label for="nomeProduto1">Nome do primeiro produto:</label>
+        <input type="text" id="nomeProduto1" /><br>
+    
+        <label for="valorProduto1">Valor do primeiro produto:</label>
+        <input type="number" step="0.01" id="valorProduto1" /><br>
+    
+        <label for="quantidadeProduto1">Quantidade Vendida do primeiro produto:</label>
+        <input type="number" id="quantidadeProduto1" /><br>
+      </div>
+      <br>
+    
+      <div>
+        <label for="nomeProduto2">Nome do segundo produto:</label>
+        <input type="text" id="nomeProduto2" /><br>
+    
+        <label for="valorProduto2">Valor do segundo produto:</label>
+        <input type="number" step="0.01" id="valorProduto2" /><br>
+    
+        <label for="quantidadeProduto2">Quantidade Vendida do segundo produto:</label>
+        <input type="number" id="quantidadeProduto2" /><br>
+      </div>
+      <br>
+    
+      <div>
+        <label for="nomeProduto3">Nome do terceiro produto:</label>
+        <input type="text" id="nomeProduto3" /><br>
+    
+        <label for="valorProduto3">Valor do terceiro produto:</label>
+        <input type="number" step="0.01" id="valorProduto3" /><br>
+    
+        <label for="quantidadeProduto3">Quantidade Vendida do terceiro produto:</label>
+        <input type="number" id="quantidadeProduto3" /><br>
+      </div>
+      <br>
+    
+      <button onclick="calcularTotal()">Calcular</button>
+    
+      <div id="valorTotal"></div>
+
+      <script>
+        function calcularTotal() {
+      var produto1 = {
+        nome: document.getElementById('nomeProduto1').value,
+        valor: parseFloat(document.getElementById('valorProduto1').value),
+        quantidade: parseInt(document.getElementById('quantidadeProduto1').value)
+      };
+
+      var produto2 = {
+        nome: document.getElementById('nomeProduto2').value,
+        valor: parseFloat(document.getElementById('valorProduto2').value),
+        quantidade: parseInt(document.getElementById('quantidadeProduto2').value)
+      };
+
+      var produto3 = {
+        nome: document.getElementById('nomeProduto3').value,
+        valor: parseFloat(document.getElementById('valorProduto3').value),
+        quantidade: parseInt(document.getElementById('quantidadeProduto3').value)
+      };
+
+      var valorTotal = (produto1.valor * produto1.quantidade) +
+                      (produto2.valor * produto2.quantidade) +
+                      (produto3.valor * produto3.quantidade);
+
+      document.getElementById('valorTotal').innerHTML = 'Valor Total da Venda: R$' + valorTotal.toFixed(2);
+    }
+
+      </script>
+    
+</body>
+</html>

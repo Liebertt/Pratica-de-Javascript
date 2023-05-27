@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do valor gasto com piso</title>
+</head>
+<body>
+
+    <p>Desenvolva uma página para calcular o custo para assentar piso, sabendo que o preço é de 36,00 por m². O programa deve ler o comprimento e a largura total do cômodo.</p>
+    <br>
+    <h1>Cálculo do valor gasto com piso</h1>
+    <label for="comprimento">Comprimento do cômodo (em metros):</label>
+    <input type="text" id="comprimento">
+    <br>
+    <label for="largura">Largura do cômodo (em metros):</label>
+    <input type="text" id="largura">
+    <br>
+    <button onclick="calcularCusto()">Calcular</button>
+    <br>
+    <div id="resultado"></div>
+
+
+    <script type="text/javascript">
+        function calcularCusto() {
+          var precoPorMetroQuadrado = 36.00;
+          var comprimento = parseFloat(document.getElementById('comprimento').value);
+          var largura = parseFloat(document.getElementById('largura').value);
+    
+          var area = comprimento * largura;
+          var custoTotal = area * precoPorMetroQuadrado;
+    
+          document.getElementById('resultado').innerHTML = 'Custo Total: R$ ' + custoTotal.toFixed(2);
+        }
+      </script>
+    
+</body>
+</html>

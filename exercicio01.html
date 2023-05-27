@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares</title>
+</head>
+<body>
+    <p>Desenvolver um programa (Web) para exibir todos os números pares de um intervalo de 1 até o valor informado pelo usuário. Mostre a soma total desses valores.</p>
+<br>
+
+    <h1>Exibição de Números Pares</h1>
+    <form id="form">
+        <label for="value">Informe um valor:</label>
+        <input type="text" id="value">
+        <button type="button" onclick="calculate()">Calcular</button>
+    </form>
+    <div id="result" style="display: none;">
+        <h2>Resultado</h2>
+        <p id="numbers"></p>
+        <p id="totalSum"></p>
+    </div>
+
+    <script>
+        function calculate() {
+    var value = parseInt(document.getElementById('value').value);
+    var evenNumbers = [];
+    var totalSum = 0;
+    
+    for (var i = 2; i <= value; i += 2) {
+        evenNumbers.push(i);
+        totalSum += i;
+    }
+    
+    document.getElementById('numbers').textContent = 'Números pares: ' + evenNumbers.join(', ');
+    document.getElementById('totalSum').textContent = 'Soma total: ' + totalSum;
+    document.getElementById('result').style.display = 'block';
+}
+
+    </script>
+</body>
+</html>
+
+
+
+
+    
+</body>
+</html>

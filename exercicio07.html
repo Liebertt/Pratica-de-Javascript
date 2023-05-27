@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores inseridos - valor maior e menor</title>
+</head>
+<body>
+    <p>Crie uma página que receba N valores do usuário. Crie botões para mostrar todos os valores inseridos, o maior valor e o menor valor do vetor.</p>
+    <br>
+    <h1>Valores inseridos - valor maior e menor</h1>
+    <label>Quantidade de Valores:</label>
+  <input type="number" id="quantidade" min="1" step="1" value="1">
+  <button onclick="adicionarValores()">Adicionar</button>
+  <br>
+
+  <div id="valoresInseridos" class="result"></div>
+  <button onclick="mostrarValores()">Mostrar Todos os Valores</button>
+  <br>
+
+  <div id="maiorValor" class="result"></div>
+  <button onclick="mostrarMaiorValor()">Mostrar Maior Valor</button>
+  <br>
+
+  <div id="menorValor" class="result"></div>
+  <button onclick="mostrarMenorValor()">Mostrar Menor Valor</button>
+  <br>
+
+
+    <script>
+        var valores = [];
+
+function adicionarValores() {
+  var quantidade = parseInt(document.getElementById("quantidade").value);
+
+  for (var i = 0; i < quantidade; i++) {
+    var valor = prompt("Digite o valor " + (i + 1));
+    valores.push(parseFloat(valor));
+  }
+}
+
+function mostrarValores() {
+  var valoresInseridos = document.getElementById("valoresInseridos");
+  valoresInseridos.innerHTML = "Valores inseridos: " + valores.join(", ");
+}
+
+function mostrarMaiorValor() {
+  var maiorValor = document.getElementById("maiorValor");
+  var max = Math.max.apply(null, valores);
+  maiorValor.innerHTML = "Maior valor: " + max;
+}
+
+function mostrarMenorValor() {
+  var menorValor = document.getElementById("menorValor");
+  var min = Math.min.apply(null, valores);
+  menorValor.innerHTML = "Menor valor: " + min;
+}
+
+    </script>
+    
+</body>
+</html>
